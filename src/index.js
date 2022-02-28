@@ -3,7 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const cors = require('cors')
 const app = express()
-const port = 5000
+const port = (process.env.PORT || 5000)
 
 // Rounter
 const route = require('./routes');

@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --inspect src/index.js",
-    "client": "npm run start --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

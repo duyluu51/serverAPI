@@ -16,22 +16,22 @@ app.use(
     }),
 )
 
-// Thiết lập kết nối đến db
-const db=require('./config/db')
-// Connect to db
-db.connect()
 
 app.use(cors())
 app.use(methodOverride('_method'))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.json({sayHi: 'Testing hello from server, nice to meet you!'})
+    res.json({ sayHi: 'Testing hello from server, nice to meet you!' })
 })
 
 // route init
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
+    // Thiết lập kết nối đến db
+    const db = require('./config/db')
+    // Connect to db
+    db.connect()
 })

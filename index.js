@@ -4,9 +4,10 @@ const methodOverride = require('method-override')
 const cors = require('cors')
 const app = express()
 const port = (process.env.PORT || 5000)
+require('dotenv').config()
 
 // Rounter
-const route = require('./routes');
+const route = require('./src/routes');
 
 // Thiết lập file tĩnh
 app.use(express.static(path.join(__dirname, 'public')))
@@ -31,7 +32,7 @@ route(app);
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
     // Thiết lập kết nối đến db
-    const db = require('./config/db')
+    const db = require('./src/config/db')
     // Connect to db
     db.connect()
 })
